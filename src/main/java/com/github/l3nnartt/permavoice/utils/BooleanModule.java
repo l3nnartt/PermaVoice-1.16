@@ -14,7 +14,9 @@ public class BooleanModule extends SimpleModule {
   }
 
   public String getDisplayValue() {
-    if (PermaVoice.getInstance().getActive()) return "ENABLED";
+    if (PermaVoice.getInstance().getActive()) {
+      return "ENABLED";
+    }
     return "DISABLED";
   }
 
@@ -26,7 +28,8 @@ public class BooleanModule extends SimpleModule {
     return new ControlElement.IconData(Material.LEVER);
   }
 
-  public void loadSettings() {}
+  public void loadSettings() {
+  }
 
   public String getSettingName() {
     return "PermaVoice Status";

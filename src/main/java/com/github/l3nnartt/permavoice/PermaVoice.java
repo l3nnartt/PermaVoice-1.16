@@ -1,9 +1,7 @@
 package com.github.l3nnartt.permavoice;
 
 import com.github.l3nnartt.permavoice.gui.ButtonElement;
-import com.github.l3nnartt.permavoice.listener.GuiOpenListener;
 import com.github.l3nnartt.permavoice.listener.PermaVoiceTickListener;
-import com.github.l3nnartt.permavoice.listener.PlayerJoinListener;
 import com.github.l3nnartt.permavoice.updater.Authenticator;
 import com.github.l3nnartt.permavoice.updater.UpdateChecker;
 import com.github.l3nnartt.permavoice.utils.BooleanModule;
@@ -14,7 +12,11 @@ import java.util.logging.Logger;
 import net.labymod.addons.voicechat.VoiceChat;
 import net.labymod.api.LabyModAddon;
 import net.labymod.main.LabyMod;
-import net.labymod.settings.elements.*;
+import net.labymod.settings.elements.BooleanElement;
+import net.labymod.settings.elements.ControlElement;
+import net.labymod.settings.elements.HeaderElement;
+import net.labymod.settings.elements.KeyElement;
+import net.labymod.settings.elements.SettingsElement;
 import net.labymod.utils.Material;
 import net.labymod.utils.ModColor;
 
@@ -46,6 +48,14 @@ public class PermaVoice extends LabyModAddon {
   // Util
   private HeaderElement headerElement;
   private PermaVoiceTickListener permaVoiceTickListener;
+
+  public static void getLogger(String log) {
+    LOGGER.info(PREFIX + log);
+  }
+
+  public static PermaVoice getInstance() {
+    return instance;
+  }
 
   public void onEnable() {
     // instance
@@ -107,14 +117,6 @@ public class PermaVoice extends LabyModAddon {
     subSettings.add(
         new KeyElement(
             "Hotkey", this, new ControlElement.IconData(Material.LEVER), "key", this.key));
-  }
-
-  public static void getLogger(String log) {
-    LOGGER.info(PREFIX + log);
-  }
-
-  public static PermaVoice getInstance() {
-    return instance;
   }
 
   public boolean getActive() {

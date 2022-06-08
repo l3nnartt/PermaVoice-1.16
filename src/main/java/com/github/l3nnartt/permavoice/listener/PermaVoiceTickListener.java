@@ -27,22 +27,22 @@ public class PermaVoiceTickListener {
           continue;
         }
         if (addon.about.name.equals("VoiceChat") && addon instanceof VoiceChat) {
-            System.out.println("Found VoiceChat");
+          System.out.println("Found VoiceChat");
           PermaVoice.getInstance().setVoiceChat((VoiceChat) addon);
           PermaVoice.getInstance().setFound(true);
           //MinecraftForge.EVENT_BUS.unregister(PermaVoice.getInstance().getVoiceChat());
           try {
             fieldPress =
-                    PermaVoice.getInstance()
-                            .getVoiceChat()
-                            .getClass()
-                            .getDeclaredField("pushToTalkPressed");
+                PermaVoice.getInstance()
+                    .getVoiceChat()
+                    .getClass()
+                    .getDeclaredField("pushToTalkPressed");
             fieldPress.setAccessible(true);
             fieldTest =
-                    PermaVoice.getInstance()
-                            .getVoiceChat()
-                            .getClass()
-                            .getDeclaredField("testingMicrophone");
+                PermaVoice.getInstance()
+                    .getVoiceChat()
+                    .getClass()
+                    .getDeclaredField("testingMicrophone");
             fieldTest.setAccessible(true);
           } catch (Exception ex) {
             ex.printStackTrace();
@@ -56,11 +56,11 @@ public class PermaVoiceTickListener {
     }
     PermaVoice.getInstance().getVoiceChat().tick(event);
     if (PermaVoice.getInstance().getVoiceChat().getKeyPushToTalk() == -1
-            || !PermaVoice.getInstance().isEnabled()) {
+        || !PermaVoice.getInstance().isEnabled()) {
       return;
     }
     if (PermaVoice.getInstance().isActive()
-            && !PermaVoice.getInstance().getVoiceChat().isPushToTalkPressed()) {
+        && !PermaVoice.getInstance().getVoiceChat().isPushToTalkPressed()) {
       setPressed(true);
     }
 
@@ -75,9 +75,10 @@ public class PermaVoiceTickListener {
           setCurrentStatus(!isCurrentStatus());
           if (PermaVoice.getInstance().isChatMessages()) {
             LabyMod.getInstance()
-                    .getLabyModAPI()
-                    .displayMessageInChat(
-                            "§ePermaVoice §8» §e" + (PermaVoice.getInstance().getActive() ? "§aON" : "§cOFF"));
+                .getLabyModAPI()
+                .displayMessageInChat(
+                    "§ePermaVoice §8» §e" + (PermaVoice.getInstance().getActive() ? "§aON"
+                        : "§cOFF"));
           }
         }
       }

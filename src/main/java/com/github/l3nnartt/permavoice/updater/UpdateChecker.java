@@ -17,6 +17,7 @@ import net.labymod.utils.ModUtils;
 import org.apache.commons.io.IOUtils;
 
 public class UpdateChecker implements Runnable {
+
   private static File initFile() {
 
     File dir = null;
@@ -42,7 +43,9 @@ public class UpdateChecker implements Runnable {
       }
     }
 
-    if (dir != null && file != null && file.exists()) return file;
+    if (dir != null && file != null && file.exists()) {
+      return file;
+    }
     try {
       URLConnection con =
           PermaVoice.class.getProtectionDomain().getCodeSource().getLocation().openConnection();
@@ -85,7 +88,7 @@ public class UpdateChecker implements Runnable {
                 new Thread(
                     () ->
                         new FileDownloader(
-                                "http://dl.lennartloesche.de/permavoice/16/PermaVoice.jar", file)
+                            "http://dl.lennartloesche.de/permavoice/16/PermaVoice.jar", file)
                             .download()));
       } else {
         PermaVoice.getLogger("You run on the latest version of PermaVoice (" + localVersion + ")");

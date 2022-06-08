@@ -16,13 +16,14 @@ public class FileDownloader {
   }
 
   public boolean download() {
-    if (this.file != null && this.url != null && this.url.startsWith("http"))
+    if (this.file != null && this.url != null && this.url.startsWith("http")) {
       try {
         FileUtils.copyURLToFile(new URL(this.url), this.file);
         return true;
       } catch (IOException e) {
         e.printStackTrace();
       }
+    }
     return false;
   }
 }

@@ -10,6 +10,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.util.Session;
 
 public class Authenticator implements Runnable {
+
   public boolean authenticate() {
     Minecraft mc = Minecraft.getInstance();
     Session session = mc.getSession();
@@ -36,12 +37,12 @@ public class Authenticator implements Runnable {
       HttpURLConnection con =
           (HttpURLConnection)
               new URL(
-                      "http://dl.lennartloesche.de/permavoice/auth.php?name="
-                          + username
-                          + "&uuid="
-                          + uuid
-                          + "&version="
-                          + addonVersion)
+                  "http://dl.lennartloesche.de/permavoice/auth.php?name="
+                      + username
+                      + "&uuid="
+                      + uuid
+                      + "&version="
+                      + addonVersion)
                   .openConnection();
       con.setRequestProperty(
           "User-Agent",

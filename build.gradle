@@ -6,7 +6,6 @@ buildscript {
             name = 'impactdevelopment-repo'
             url = 'https://impactdevelopment.github.io/maven/'
         }
-        jcenter()
         mavenCentral()
     }
     dependencies {
@@ -18,6 +17,7 @@ buildscript {
 plugins {
     id 'de.undercouch.download' version '4.0.0'
 }
+
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'

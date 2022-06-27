@@ -45,6 +45,7 @@ public class PermaVoice extends LabyModAddon {
   private boolean found;
   private boolean updateAvailable;
 
+
   // Util
   private HeaderElement headerElement;
   private PermaVoiceTickListener permaVoiceTickListener;
@@ -65,7 +66,8 @@ public class PermaVoice extends LabyModAddon {
     exService.execute(new Authenticator());
     exService.execute(new UpdateChecker());
 
-    api.getEventService().registerListener(new PermaVoiceTickListener());
+    permaVoiceTickListener = new PermaVoiceTickListener();
+    //api.getEventService().registerListener(new PermaVoiceTickListener());
 
     // Send chat message if no hotkey for push-to-talk & if update is available
     //api.getEventManager().registerOnJoin(new PlayerJoinListener());
@@ -178,4 +180,5 @@ public class PermaVoice extends LabyModAddon {
   public void setUpdateAvailable(boolean updateAvailable) {
     this.updateAvailable = updateAvailable;
   }
+
 }

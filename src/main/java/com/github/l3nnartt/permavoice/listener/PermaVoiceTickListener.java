@@ -18,8 +18,8 @@ public class PermaVoiceTickListener {
   private boolean togglePressed;
   private boolean currentStatus;
 
-  @Subscribe
-  public void onTick(TickEvent event) {
+
+  public void onTick() {
     if (!PermaVoice.getInstance().isInit()) {
       System.out.println("Init");
       for (LabyModAddon addon : AddonLoader.getAddons()) {
@@ -54,7 +54,6 @@ public class PermaVoiceTickListener {
     if (!PermaVoice.getInstance().isFound()) {
       return;
     }
-    PermaVoice.getInstance().getVoiceChat().tick(event);
     if (PermaVoice.getInstance().getVoiceChat().getKeyPushToTalk() == -1
         || !PermaVoice.getInstance().isEnabled()) {
       return;

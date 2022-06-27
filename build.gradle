@@ -21,7 +21,7 @@ plugins {
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
-apply plugin: 'org.spongepowered.mixin'
+//apply plugin: 'org.spongepowered.mixin'
 
 group = "com.github.l3nnartt.permavoice"
 archivesBaseName = "PermaVoice"
@@ -32,10 +32,10 @@ compileJava.options.encoding = "UTF-8"
 
 def mcpVersion = [channel: 'snapshot', version: '20201028-1.16.3']
 
-mixin {
-    defaultObfuscationEnv searge
-    add sourceSets.main, "example.refmap.json"
-}
+//mixin {
+//    defaultObfuscationEnv searge
+//    add sourceSets.main, "permavoice.refmap.json"
+//}
 
 minecraft {
     mappings mcpVersion

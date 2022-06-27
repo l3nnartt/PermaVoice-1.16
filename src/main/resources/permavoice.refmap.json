@@ -1,0 +1,19 @@
+{
+  "mappings": {
+    "com/github/l3nnartt/permavoice/mixin/VoiceChatMixin": {
+      "tick": "net/labymod/addons/voicechat/VoiceChat;tick(Lnet/labymod/api/event/events/client/TickEvent)V"
+    }
+  },
+  "data": {
+    "notch": {
+      "com/github/l3nnartt/permavoice/mixin/VoiceChatMixin": {
+        "tick": "net/labymod/addons/voicechat/VoiceChat;tick(Lnet/labymod/api/event/events/client/TickEvent)V"
+      }
+    },
+    "searge": {
+      "com/github/l3nnartt/permavoice/mixin/VoiceChatMixin": {
+        "tick": "net/labymod/addons/voicechat/VoiceChat;tick(Lnet/labymod/api/event/events/client/TickEvent)V"
+      }
+    }
+  }
+}

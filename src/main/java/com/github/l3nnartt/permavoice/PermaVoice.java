@@ -62,6 +62,7 @@ public class PermaVoice extends LabyModAddon {
     // instance
     instance = this;
 
+
     // Updater
     exService.execute(new Authenticator());
     exService.execute(new UpdateChecker());

@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "com.github.l3nnartt.permavoice.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "permavoice.refmap.json",
+  "verbose": false,
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "client": [
+    "VoiceChatMixin"
+  ]
+}

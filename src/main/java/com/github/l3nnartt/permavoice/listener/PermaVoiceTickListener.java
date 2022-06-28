@@ -30,7 +30,6 @@ public class PermaVoiceTickListener {
           System.out.println("Found VoiceChat");
           PermaVoice.getInstance().setVoiceChat((VoiceChat) addon);
           PermaVoice.getInstance().setFound(true);
-          //MinecraftForge.EVENT_BUS.unregister(PermaVoice.getInstance().getVoiceChat());
           try {
             fieldPress =
                 PermaVoice.getInstance()
@@ -88,6 +87,11 @@ public class PermaVoiceTickListener {
   }
 
   public void setPressed(boolean mode) {
+    try {
+      System.out.println("enabled first " + fieldPress.getBoolean(PermaVoice.getInstance().getVoiceChat()));
+    } catch (IllegalAccessException e) {
+      throw new RuntimeException(e);
+    }
     System.out.println("setPressed: " + mode);
     try {
       PermaVoice.getInstance().setActive(mode);

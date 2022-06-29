@@ -98,7 +98,7 @@ public class PermaVoice extends LabyModAddon {
             "GitHub",
             () ->
                 LabyMod.getInstance()
-                    .openWebpage("https://github.com/l3nnartt/PermaVoice-1.8", false)));
+                    .openWebpage("https://github.com/l3nnartt/PermaVoice-1.16", false)));
     subSettings.add(new HeaderElement(ModColor.cl('a') + "PermaVoice Settings"));
     subSettings.add(
         new BooleanElement(
